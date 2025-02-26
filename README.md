@@ -1,3 +1,3 @@
 ## maimai Custom Rating Project
 
-URL : 
+URL : https://maimai-custom-rating.vercel.app/
