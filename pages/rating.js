@@ -114,7 +114,11 @@ export default function Rating() {
           </div>
         ) : (
           <div>
-            <h1 className={styles.ratingTitle}>Not Registered User</h1>
+            <h1 className={styles.ratingTitle}>
+              아직 등록되지 않은 유저입니다.
+              <br />
+              Update & Help 탭을 확인해주세요.
+            </h1>
           </div>
         )}
       </main>

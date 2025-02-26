@@ -94,7 +94,19 @@ export default async function handler(req, res) {
           achiv = 1.005;
         }
         try {
-          musicrating = parseInt(musicdata[0].level * achiv * achivnum);
+          if (achiv >= 1.005) {
+            musicrating = parseInt(musicdata[0].level * 1.005 * achivnum);
+          } else {
+            musicrating = parseInt(musicdata[0].level * achiv * achivnum);
+          }
+          if (achiv >= 1.008) {
+            musicrating += 3;
+          }
+          if (fcapdata[i] === "AP" || fcapdata[i] === "AP+") {
+            musicrating += 3;
+          } else if (fcapdata[i] === "FC+") {
+            musicrating += 1;
+          }
         } catch (error) {
           console.log("music rating Error : ", error);
         }
