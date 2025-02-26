@@ -168,7 +168,7 @@ var fetchSequentially = async () => {
   }
   alert("갱신이 완료되었습니다.\n확인을 클릭하면 INFO 화면으로 이동합니다.");
   window.open(
-    "http://127.0.0.1:3000/rating?friendcode=" + friendcode,
+    "https://maimai-custom-rating.vercel.app/rating?friendcode=" + friendcode,
     "_blank"
   ); // 새 탭에서 URL 열기
 };
