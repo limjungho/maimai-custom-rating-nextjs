@@ -1,0 +1,40 @@
+/* components/Navbar.module.css */
+
+.navbar {
+  background-color: #b6b5b5;
+  padding: 1rem;
+  height: 60px; /* 네비게이션 바의 높이를 설정 */
+  display: flex;
+  align-items: center; /* 네비게이션 바 내부에서 중앙 정렬 */
+  /*position: fixed;  화면 상단에 고정 */
+  top: 0;
+  width: 100%;
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+  height: 100%;
+  align-items: center;
+  width: 100%;
+}
+
+.navItem {
+}
+
+.navLink {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: black;
+  display: block;
+  padding: 10px 20px; /* 클릭 가능한 영역 확대 */
+  border-radius: 5px;
+}
+
+.navLink:hover {
+  text-decoration: underline;
+}
