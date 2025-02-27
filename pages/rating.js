@@ -68,14 +68,17 @@ export default function Rating() {
         fetch(`/api/getinfo?friendcode=${friendcode}`)
           .then((response) => response.json())
           .then((resp) => {
-            if (Object.keys(resp.data).length > 0) {
-              setIsRegistered(true);
-              setuserdata(resp.data);
-              setcsr(resp.data[0].customrating);
-              setpn(resp.data[0].playername);
-              setorgr(resp.data[0].originalrating);
-            } else {
-              setIsRegistered(false);
+            //console.log(resp);
+            if (!resp.error) {
+              if (Object.keys(resp.data).length > 0) {
+                setIsRegistered(true);
+                setuserdata(resp.data);
+                setcsr(resp.data[0].customrating);
+                setpn(resp.data[0].playername);
+                setorgr(resp.data[0].originalrating);
+              } else {
+                setIsRegistered(false);
+              }
             }
           })
           .catch((error) => {

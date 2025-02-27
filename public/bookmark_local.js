@@ -148,37 +148,34 @@ var fetchSequentially = async () => {
 
   //3. api fetch
   try {
-    var resp3 = await fetch(
-      "https://maimai-custom-rating.vercel.app/api/calrating",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          musicnamedata,
-          dxstddata,
-          difficultydata,
-          musicscoredata,
-          fcapdata,
-          friendcode,
-          playername,
-          originalrating,
-        }),
-      }
-    )
+    fetch("http://127.0.0.1:3000/api/calrating", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        musicnamedata,
+        dxstddata,
+        difficultydata,
+        musicscoredata,
+        fcapdata,
+        friendcode,
+        playername,
+        originalrating,
+      }),
+    })
       .then((response) => response.json())
       .then((data) => console.log(data.message))
       .catch((error) => console.error("Error:", error));
   } catch (error) {
     console.error("Error api request :", error);
   }
-
+  console.log("await INSERT query");
   await sleep(5000);
 
   alert("갱신이 완료되었습니다.\n확인을 클릭하면 INFO 화면으로 이동합니다.");
   window.open(
-    "https://maimai-custom-rating.vercel.app/rating?friendcode=" + friendcode,
+    "http://127.0.0.1:3000/rating?friendcode=" + friendcode,
     "_blank"
   ); // 새 탭에서 URL 열기
 };
