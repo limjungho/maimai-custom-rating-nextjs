@@ -34,7 +34,10 @@ export default function Home() {
           property="og:description"
           content="maimaiDX 커스텀 레이팅 웹서비스"
         />
-        <meta property="og:image" content="./favicon.png" />
+        <meta
+          property="og:image"
+          content="https://maimai-custom-rating.vercel.app/ogImage.png"
+        />
         <meta
           property="og:url"
           content="https://maimai-custom-rating.vercel.app/"
