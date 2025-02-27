@@ -1,4 +1,4 @@
-const URL = "https://maimai-custom-rating.vercel.app";
+var URL = "https://maimai-custom-rating.vercel.app";
 
 var dxstddata = [];
 var difficultydata = [];
