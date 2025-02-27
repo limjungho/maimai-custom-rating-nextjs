@@ -48,23 +48,21 @@ export default function Home() {
       <main className={styles.main}>
         <h1 className={styles.title}>maimaiDX Custom Rating</h1>
         <p className={styles.description}>Now Beta Testing</p>
-        <div>
-          <form onSubmit={handleSubmit}>
-            <input
-              type="number"
-              value={friendcode}
-              onChange={(e) => setfriendcode(e.target.value)}
-              placeholder="maimaiDX friend code를 입력하세요(숫자만 입력 가능)"
-              className={styles.inputField}
-            />
-            <button type="submit" className={styles.submitButton}>
-              Submit
-            </button>
-          </form>
-          <p className={styles.linkText} onClick={handleLinkClick}>
-            maimaiDX NET 사이트에서 friend code를 확인하려면 클릭하세요.
-          </p>
-        </div>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="number"
+            value={friendcode}
+            onChange={(e) => setfriendcode(e.target.value)}
+            placeholder="maimaiDX friend code를 입력하세요(숫자만 입력 가능)"
+            className={styles.inputField}
+          />
+          <button type="submit" className={styles.submitButton}>
+            Submit
+          </button>
+        </form>
+        <p className={styles.linkText} onClick={handleLinkClick}>
+          maimaiDX NET 사이트에서 friend code를 확인하려면 클릭하세요.
+        </p>
       </main>
     </div>
   );

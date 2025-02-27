@@ -1,7 +1,7 @@
 /* styles/Home.module.css */
 
 .container {
-  min-height: calc(100vh - 60px - 60px);
+  min-height: calc(100vh - 60px - 80px);
   /* 네비게이션 바와 푸터의 높이만큼 빼서 최소 높이를 설정합니다 */
   box-sizing: border-box;
   padding: 0 2rem;
@@ -9,6 +9,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow-x: auto;
 }
 
 .main {
@@ -36,7 +37,7 @@
 
 .inputField {
   border: 1px solid black;
-  width: 500px;
+  width: 40vw;
   height: 40px;
   padding: 10px;
   -moz-appearance: textfield;
@@ -80,6 +81,7 @@
   width: 100%;
   left: 0;
   bottom: 0;
+  margin-top: 20px;
 }
 
 .ratingTitle {
@@ -108,12 +110,16 @@
 }
 
 /* Home.module.css */
+.tableWrapper {
+  white-space: nowrap;
+}
 .tableWrapper table {
   width: 100%;
   border-collapse: collapse;
   margin: 20px 0;
   font-size: 18px;
   font-family: "Arial", sans-serif;
+  table-layout: auto;
 }
 
 .tableWrapper th {
@@ -122,12 +128,16 @@
   text-align: center;
   padding: 12px 15px;
   border: 1px solid #ddd;
+  overflow: hidden; /* 셀 내용이 넘칠 경우 숨김 */
+  text-overflow: ellipsis; /* 내용이 넘칠 경우 말줄임 표시 (...) */
 }
 
 .tableWrapper td {
   padding: 12px 15px;
   border: 1px solid #ddd;
   text-align: center;
+  overflow: hidden; /* 셀 내용이 넘칠 경우 숨김 */
+  text-overflow: ellipsis; /* 내용이 넘칠 경우 말줄임 표시 (...) */
 }
 .tableWrapper .leftAlign {
   text-align: left;
