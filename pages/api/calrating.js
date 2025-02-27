@@ -96,9 +96,6 @@ export default async function handler(req, res) {
       } else if (achiv >= 0.97) {
         achivnum = 20.0;
       }
-      if (achiv >= 1.005) {
-        achiv = 1.005;
-      }
       try {
         if (achiv >= 1.005) {
           musicrating = parseInt(musicdata[0].level * 1.005 * achivnum);
