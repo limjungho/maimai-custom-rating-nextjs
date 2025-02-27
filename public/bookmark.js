@@ -17,7 +17,7 @@ var sleep = (ms) => {
 
 var fetchSequentially = async () => {
   alert(
-    "확인을 누르면 갱신을 진행합니다.\n확인을 누른 이후 알림창이 새로 나타날 때까지 기다려주세요.(10초)"
+    "확인을 누르면 갱신을 진행합니다.\n확인을 누른 이후 알림창이 새로 나타날 때까지 기다려주세요.(15초)"
   );
   //1. URL에서 friend code, player name, original rating 정보 fetch
   try {
