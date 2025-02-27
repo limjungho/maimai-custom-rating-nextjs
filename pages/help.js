@@ -8,7 +8,7 @@ export default function Help() {
   return (
     <div className={styles.helpContainer}>
       <Head>
-        <title>Help Page</title>
+        <title>maimaiDX Custom Rating</title>
         <meta name="description" content="Help Page" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

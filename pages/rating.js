@@ -91,8 +91,8 @@ export default function Rating() {
   return (
     <div className={styles.ratingContainer}>
       <Head>
-        <title>Rating Page</title>
-        <meta name="description" content="Calculating Custom Rating" />
+        <title>maimaiDX Custom Rating</title>
+        <meta name="description" content="Rating Page" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

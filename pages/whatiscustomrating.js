@@ -8,7 +8,7 @@ export default function whatiscustomrating() {
   return (
     <div className={styles.helpContainer}>
       <Head>
-        <title>Custom Rating Explain Page</title>
+        <title>maimaiDX Custom Rating</title>
         <meta name="description" content="Custom Rating Explain Page" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

@@ -26,9 +26,20 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Main Page</title>
+        <title>maimaiDX Custom Rating</title>
         <meta name="description" content="Main Page" />
         <link rel="icon" href="/favicon.ico" />
+        <meta property="og:title" content="maimaiDX Custom Rating" />
+        <meta
+          property="og:description"
+          content="maimaiDX 커스텀 레이팅 웹서비스"
+        />
+        <meta property="og:image" content="./favicon.png" />
+        <meta
+          property="og:url"
+          content="https://maimai-custom-rating.vercel.app/"
+        />
+        <meta property="og:type" content="website" />
       </Head>
 
       <main className={styles.main}>
