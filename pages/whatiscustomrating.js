@@ -36,9 +36,15 @@ export default function whatiscustomrating() {
           <br />
           (FC+ 달성 이후 AP 달성 시 +2점)
         </p>
+
+        <p className={styles.helpDescription}>
+          ○ Custom Rating은 <b>레벨 13 이상의 보면</b>부터 Rating 대상으로
+          포함합니다. 12+ 이하의 보면은 Custom Rating 대상으로 포함하지 않으니
+          참고바랍니다.
+        </p>
         <p className={styles.helpDescription}>
           ○ 기존의 Rating과 비교하여 한 곡에서 얻을 수 있는 Rating 점수는 최대
-          6점을 더 획득 할 수 있습니다.
+          6점을 더 획득할 수 있습니다.
         </p>
         <p className={styles.helpDescription}>
           ○ 명시되지 않은 부분은 기존의 Rating과 동일합니다.
