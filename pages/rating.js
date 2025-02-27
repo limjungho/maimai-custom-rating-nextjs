@@ -44,6 +44,14 @@ const DataTable = ({ data }) => {
   );
 };
 
+const sortData = (data) => {
+  const sortedData = data.sort(
+    (a, b) =>
+      b.musicrating - a.musicrating || a.musicname.localeCompare(b.musicname)
+  );
+  return sortedData;
+};
+
 export default function Rating() {
   const router = useRouter();
   const { friendcode } = router.query; // URL 쿼리 파라미터에서 'friendcode' 변수를 가져옵니다.
@@ -77,7 +85,7 @@ export default function Rating() {
             if (!resp.error) {
               if (Object.keys(resp.data).length > 0) {
                 setIsRegistered(true);
-                setuserdata(resp.data);
+                setuserdata(sortData(resp.data));
                 setcsr(resp.data[0].customrating);
                 setpn(resp.data[0].playername);
                 setorgr(resp.data[0].originalrating);
