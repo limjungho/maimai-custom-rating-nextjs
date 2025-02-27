@@ -1,4 +1,5 @@
 var URL = "http://127.0.0.1:3000";
+var LoadingTime = 5000;
 
 var dxstddata = [];
 var difficultydata = [];
@@ -16,7 +17,7 @@ var sleep = (ms) => {
 
 var fetchSequentially = async () => {
   alert(
-    "확인을 누르면 갱신을 진행합니다.\n확인을 누른 이후 알림창이 새로 나타날 때까지 기다려주세요."
+    "확인을 누르면 갱신을 진행합니다.\n확인을 누른 이후 알림창이 새로 나타날 때까지 기다려주세요.(10초)"
   );
   //1. URL에서 friend code, player name, original rating 정보 fetch
   try {
@@ -173,7 +174,7 @@ var fetchSequentially = async () => {
     console.error("Error api request :", error);
   }
   console.log("await INSERT query");
-  await sleep(10000);
+  await sleep(LoadingTime);
 
   alert("갱신이 완료되었습니다.\n확인을 클릭하면 INFO 화면으로 이동합니다.");
   window.open(URL + "/rating?friendcode=" + friendcode, "_blank"); // 새 탭에서 URL 열기
