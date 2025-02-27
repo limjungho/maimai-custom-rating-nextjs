@@ -54,21 +54,26 @@ export default function Rating() {
   const [pn, setpn] = useState(null);
   const [userdata, setuserdata] = useState(null);
   const [orgr, setorgr] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    if (friendcode) {
-      const regex = /^\d+$/;
-      if (!regex.test(friendcode)) {
-        setIsValid(false);
-        alert("Friendcode는 숫자로만 이루어져야 합니다.");
-      } else {
-        setIsValid(true);
-        setfc(friendcode);
+    const fetchData = async () => {
+      if (friendcode) {
+        const regex = /^\d+$/;
+        if (!regex.test(friendcode)) {
+          setIsValid(false);
+          alert("Friendcode는 숫자로만 이루어져야 합니다.");
+        } else {
+          setIsValid(true);
+          setfc(friendcode);
 
-        fetch(`/api/getinfo?friendcode=${friendcode}`)
-          .then((response) => response.json())
-          .then((resp) => {
-            //console.log(resp);
+          try {
+            const response = await fetch(
+              `/api/getinfo?friendcode=${friendcode}`
+            );
+            const resp = await response.json();
+            setIsLoaded(true);
+
             if (!resp.error) {
               if (Object.keys(resp.data).length > 0) {
                 setIsRegistered(true);
@@ -80,12 +85,13 @@ export default function Rating() {
                 setIsRegistered(false);
               }
             }
-          })
-          .catch((error) => {
+          } catch (error) {
             console.error("Error checking friendcode:", error);
-          });
+          }
+        }
       }
-    }
+    };
+    fetchData();
   }, [friendcode]);
 
   return (
@@ -97,33 +103,41 @@ export default function Rating() {
       </Head>
 
       <main>
-        {isValid ? (
-          <div>
-            <h1 className={styles.ratingTitle}>Your Friend Code : {fc}</h1>
-          </div>
+        {isLoaded ? (
+          isValid ? (
+            <div>
+              <h1 className={styles.ratingTitle}>Your Friend Code : {fc}</h1>
+            </div>
+          ) : (
+            <div>
+              <h1 className={styles.ratingTitle}>Invalid Friend Code</h1>
+            </div>
+          )
         ) : (
           <div>
-            <h1 className={styles.ratingTitle}>Invalid Friend Code</h1>
+            <h1 className={styles.ratingTitle}>Loading...</h1>
           </div>
         )}
-        {isRegistered ? (
-          <div>
-            <h1 className={styles.ratingTitle}>Player Name : {pn}</h1>
-            <h1 className={styles.ratingTitle}>
-              Your Original Rating : {orgr}
-            </h1>
-            <h1 className={styles.ratingTitle}>Your Custom Rating : {csr}</h1>
-            <DataTable data={userdata} />
-          </div>
-        ) : (
-          <div>
-            <h1 className={styles.ratingTitle}>
-              아직 등록되지 않은 유저입니다.
-              <br />
-              Update & Help 탭을 확인해주세요.
-            </h1>
-          </div>
-        )}
+
+        {isLoaded &&
+          (isRegistered ? (
+            <div>
+              <h1 className={styles.ratingTitle}>Player Name : {pn}</h1>
+              <h1 className={styles.ratingTitle}>
+                Your Original Rating : {orgr}
+              </h1>
+              <h1 className={styles.ratingTitle}>Your Custom Rating : {csr}</h1>
+              <DataTable data={userdata} />
+            </div>
+          ) : (
+            <div>
+              <h1 className={styles.ratingTitle}>
+                아직 등록되지 않은 유저입니다.
+                <br />
+                Update & Help 탭을 확인해주세요.
+              </h1>
+            </div>
+          ))}
       </main>
     </div>
   );
