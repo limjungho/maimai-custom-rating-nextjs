@@ -1,5 +1,5 @@
 var URL = "https://maimai-custom-rating.vercel.app";
-var LoadingTime = 12000;
+var LoadingTime = 15000;
 
 var dxstddata = [];
 var difficultydata = [];
