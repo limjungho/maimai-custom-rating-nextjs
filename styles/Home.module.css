@@ -133,6 +133,7 @@
 }
 
 .tableWrapper td {
+  color: #333;
   padding: 12px 15px;
   border: 1px solid #ddd;
   text-align: center;
