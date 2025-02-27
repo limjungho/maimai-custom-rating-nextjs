@@ -1,3 +1,5 @@
+const URL = "http://127.0.0.1:3000/";
+
 var dxstddata = [];
 var difficultydata = [];
 var fcapdata = [];
@@ -148,7 +150,7 @@ var fetchSequentially = async () => {
 
   //3. api fetch
   try {
-    fetch("http://127.0.0.1:3000/api/calrating", {
+    fetch(URL + "/api/calrating", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -174,10 +176,7 @@ var fetchSequentially = async () => {
   await sleep(5000);
 
   alert("갱신이 완료되었습니다.\n확인을 클릭하면 INFO 화면으로 이동합니다.");
-  window.open(
-    "http://127.0.0.1:3000/rating?friendcode=" + friendcode,
-    "_blank"
-  ); // 새 탭에서 URL 열기
+  window.open(URL + "/rating?friendcode=" + friendcode, "_blank"); // 새 탭에서 URL 열기
 };
 
 fetchSequentially();
