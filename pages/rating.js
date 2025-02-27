@@ -47,7 +47,9 @@ const DataTable = ({ data }) => {
 const sortData = (data) => {
   const sortedData = data.sort(
     (a, b) =>
-      b.musicrating - a.musicrating || a.musicname.localeCompare(b.musicname)
+      b.musicrating - a.musicrating ||
+      b.musicscore.localeCompare(a.musicscore) ||
+      a.musicname.localeCompare(b.musicname)
   );
   return sortedData;
 };
