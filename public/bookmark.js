@@ -1,4 +1,4 @@
-var URL = "https://www.maimaicustomrating.site/";
+var URL = "https://www.maimaicustomrating.site";
 var LoadingTime = 15000;
 
 var dxstddata = [];
