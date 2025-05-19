@@ -128,7 +128,8 @@ export default async function handler(req, res) {
 
     RatingList.sort(
       (a, b) =>
-        b.musicrating - a.musicrating || a.musicname.localeCompare(b.musicname)
+        b.musicrating - a.musicrating ||
+        a.musicscore.localeCompare(b.musicscore)
     );
     //console.log(RatingList);
 
