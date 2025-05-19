@@ -142,15 +142,21 @@ export default async function handler(req, res) {
     //console.log(CustomRating);
     //console.log(newRatingList);
 
+    const now = new Date();
+    const formattedDate = now.toISOString().slice(0, 10); // YYYY-MM-DD 형식으로 변환
+    const formattedTime = now.toTimeString().slice(0, 8); // HH:MM:SS 형식으로 변환
+    const formattedDateTime = `${formattedDate} ${formattedTime}`; // YYYY-MM-DD HH:MM:SS 형식으로 결합
+
     const sqldel = "DELETE FROM userinfo WHERE friendcode = $1";
     await sqlneon(sqldel, [friendcode]);
     for (let j = 0; j < CustomRatingCount; j++) {
       const sqlinsert =
-        "INSERT INTO userinfo (friendcode, id, playername, originalrating, customrating, musicrating, musicname, dxstd, difficulty, level, musicscore, fcap) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)";
+        "INSERT INTO userinfo (friendcode, id, playername, update_time, originalrating, customrating, musicrating, musicname, dxstd, difficulty, level, musicscore, fcap) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)";
       await sqlneon(sqlinsert, [
         friendcode,
         "tmp",
         playername,
+        formattedDateTime,
         originalrating,
         CustomRating,
         RatingList[j].musicrating,

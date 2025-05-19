@@ -62,6 +62,7 @@ export default function Rating() {
   const [isRegistered, setIsRegistered] = useState(false);
   const [csr, setcsr] = useState(null);
   const [pn, setpn] = useState(null);
+  const [rcut, setrcut] = useState(null);
   const [userdata, setuserdata] = useState(null);
   const [orgr, setorgr] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -90,6 +91,7 @@ export default function Rating() {
                 setuserdata(sortData(resp.data));
                 setcsr(resp.data[0].customrating);
                 setpn(resp.data[0].playername);
+                setrcut(resp.data[0].update_time);
                 setorgr(resp.data[0].originalrating);
               } else {
                 setIsRegistered(false);
@@ -133,6 +135,9 @@ export default function Rating() {
           (isRegistered ? (
             <div>
               <h1 className={styles.ratingTitle}>Player Name : {pn}</h1>
+              <h1 className={styles.ratingTitle}>
+                Recent Update Time : {rcut}
+              </h1>
               <h1 className={styles.ratingTitle}>
                 Your Original Rating : {orgr}
               </h1>
