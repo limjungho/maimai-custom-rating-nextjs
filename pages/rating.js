@@ -29,7 +29,7 @@ const DataTable = ({ data }) => {
                 <td className={styles.leftAlign}>{item.musicname}</td>
                 <td>{item.dxstd}</td>
                 <td>{item.difficulty}</td>
-                <td>{item.level}</td>
+                <td>{Number(item.level).toFixed(1)}</td>
                 <td>{item.musicscore}</td>
                 <td>{item.fcap}</td>
                 <td>{item.musicrating}</td>
