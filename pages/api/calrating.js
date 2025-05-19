@@ -143,9 +143,12 @@ export default async function handler(req, res) {
     //console.log(newRatingList);
 
     const now = new Date();
-    const formattedDate = now.toISOString().slice(0, 10); // YYYY-MM-DD 형식으로 변환
-    const formattedTime = now.toTimeString().slice(0, 8); // HH:MM:SS 형식으로 변환
-    const formattedDateTime = `${formattedDate} ${formattedTime}`; // YYYY-MM-DD HH:MM:SS 형식으로 결합
+    const utc = now.getTime() + now.getTimezoneOffset() * 60000; // UTC 기준 시간
+    const koreaTime = new Date(utc + 9 * 60 * 60 * 1000); // 한국 시간 (UTC+9)
+
+    const formattedDate = koreaTime.toISOString().slice(0, 10); // YYYY-MM-DD
+    const formattedTime = koreaTime.toTimeString().slice(0, 8); // HH:MM:SS
+    const formattedDateTime = `${formattedDate} ${formattedTime}`;
 
     const sqldel = "DELETE FROM userinfo WHERE friendcode = $1";
     await sqlneon(sqldel, [friendcode]);
