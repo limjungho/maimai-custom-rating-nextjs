@@ -208,3 +208,8 @@
 .aWrapper:hover {
   text-decoration: underline; /* 마우스를 올렸을 때 밑줄 추가 */
 }
+
+.main_image {
+  width: 40%;
+  height: auto; /* 비율 유지 */
+}

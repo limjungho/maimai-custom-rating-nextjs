@@ -46,8 +46,8 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
+        <img src="/maimaidxprism.jpg" className={styles.main_image}></img>
         <h1 className={styles.title}>maimaiDX Custom Rating</h1>
-        <p className={styles.description}>Now Beta Testing</p>
         <form onSubmit={handleSubmit}>
           <input
             type="number"

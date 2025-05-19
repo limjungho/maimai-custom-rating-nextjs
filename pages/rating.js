@@ -18,7 +18,7 @@ const DataTable = ({ data }) => {
               <th>Difficulty</th>
               <th>Level</th>
               <th>Score</th>
-              <th>FC AP</th>
+              <th>FC / AP</th>
               <th>Music Rating</th>
             </tr>
           </thead>
