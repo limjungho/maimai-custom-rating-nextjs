@@ -20,7 +20,7 @@ export default function Help() {
         <textarea
           className={styles.textareaWrapper}
           type="text"
-          value="javascript:(function(){var script = document.createElement('script'); script.src = 'https://maimai-custom-rating.vercel.app/bookmark.js'; document.body.appendChild(script);})();"
+          value="javascript:(function(){var script = document.createElement('script'); script.src = 'https://www.maimaicustomrating.site/bookmark.js'; document.body.appendChild(script);})();"
           readonly
         ></textarea>
         <p className={styles.helpDescription}>

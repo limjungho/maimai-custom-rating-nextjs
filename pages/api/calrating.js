@@ -165,58 +165,5 @@ export default async function handler(req, res) {
   } else {
     console.log("No data found.");
   }
-
-  //musiclevel db의 정보 select 하여 rating 계산
-
-  // db.all(sql, (err, row) => {
-  //   if (err) {
-  //     console.error(err.message);
-  //     return;
-  //   }
-
-  //   //----------------------------------------------25.02.25.
-  //   db.run(
-  //     "DELETE FROM userinfo WHERE friendcode = ?",
-  //     [friendcode],
-  //     function (err) {
-  //       if (err) {
-  //         return console.error(err.message);
-  //       }
-  //       // 새로운 레코드 삽입
-  //       for (let j = 0; j < CustomRatingCount; j++) {
-  //         const sql2 =
-  //           "INSERT INTO userinfo (friendcode, id, playername, originalrating, customrating, musicrating, musicname, dxstd, difficulty, level,musicscore,fcap) VALUES (?, ?, ?,?, ?, ?, ?, ?, ?, ?, ?, ?)";
-  //         db.run(
-  //           sql2,
-  //           [
-  //             friendcode,
-  //             "tmp",
-  //             playername,
-  //             originalrating,
-  //             CustomRating,
-  //             RatingList[j].musicrating,
-  //             RatingList[j].musicname,
-  //             RatingList[j].dxstd,
-  //             RatingList[j].difficulty,
-  //             RatingList[j].level,
-  //             RatingList[j].musicscore,
-  //             RatingList[j].fcap,
-  //           ],
-  //           function (err) {
-  //             if (err) {
-  //               return console.error(err.message);
-  //             }
-  //           }
-  //         );
-  //       }
-  //     }
-  //   );
-
-  //   // 데이터베이스 연결 종료
-  //   db.close((err) => {
-  //     if (err) {
-  //       console.error(err.message);
-  //     }
-  //   });
-  // });
+  await sqlneon.end();
 }

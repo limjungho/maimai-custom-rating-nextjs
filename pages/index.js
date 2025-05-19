@@ -36,11 +36,11 @@ export default function Home() {
         />
         <meta
           property="og:image"
-          content="https://maimai-custom-rating.vercel.app/ogImage.png"
+          content="https://www.maimaicustomrating.site/ogImage.png"
         />
         <meta
           property="og:url"
-          content="https://maimai-custom-rating.vercel.app/"
+          content="https://www.maimaicustomrating.site/"
         />
         <meta property="og:type" content="website" />
       </Head>
