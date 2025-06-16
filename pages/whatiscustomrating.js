@@ -16,11 +16,11 @@ export default function whatiscustomrating() {
         {/* Header */}
         <div className="text-center space-y-4">
           <div className="flex items-center justify-center gap-2">
-            <Star className="w-8 h-8 text-purple-600" />
-            <h1 className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+            <Star className="w-8 h-8 text-purple-500" />
+            <h1 className="text-4xl font-bold bg-gradient-to-r text-purple-600">
               Custom Rating
             </h1>
-            <Star className="w-8 h-8 text-blue-600" />
+            <Star className="w-8 h-8 text-purple-500" />
           </div>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             상위권 유저들을 위한 세분화된 평점 시스템
