@@ -49,9 +49,6 @@ export default function whatiscustomrating() {
         <p className={styles.helpDescription}>
           ○ 명시되지 않은 부분은 기존의 Rating과 동일합니다.
         </p>
-        <p className={styles.helpDescription}>
-          ○ 현재 Beta Test 중으로 Rating 계산에 오차가 발생할 수 있습니다.
-        </p>
       </main>
     </div>
   );
