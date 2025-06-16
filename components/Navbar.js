@@ -1,31 +1,36 @@
-// components/Navbar.js
+"use client";
 
-import React from "react";
 import Link from "next/link";
-import styles from "./Navbar.module.css";
+import { usePathname } from "next/navigation";
 
-const Navbar = () => {
+export default function Navigation() {
+  const pathname = usePathname();
+
+  const navItems = [
+    { name: "Home", href: "/" },
+    { name: "Custom Rating이란?", href: "/whatiscustomrating" },
+    { name: "Update & Help", href: "/help" },
+  ];
+
   return (
-    <nav className={styles.navbar}>
-      <ul className={styles.navList}>
-        <li className={styles.navItem}>
-          <Link href="/" className={styles.navLink}>
-            Home
-          </Link>
-        </li>
-        <li className={styles.navItem}>
-          <Link href="/whatiscustomrating" className={styles.navLink}>
-            Custom Rating이란?
-          </Link>
-        </li>
-        <li className={styles.navItem}>
-          <Link href="/help" className={styles.navLink}>
-            Update & Help
-          </Link>
-        </li>
-      </ul>
+    <nav className="w-full border-b border-gray-200 bg-white">
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="flex justify-center space-x-12 py-4">
+          {navItems.map((item) => (
+            <Link
+              key={item.name}
+              href={item.href}
+              className={`text-sm font-medium transition-colors hover:text-blue-600 ${
+                pathname === item.href
+                  ? "text-blue-600 border-b-2 border-blue-600 pb-1"
+                  : "text-gray-700"
+              }`}
+            >
+              {item.name}
+            </Link>
+          ))}
+        </div>
+      </div>
     </nav>
   );
-};
-
-export default Navbar;
+}

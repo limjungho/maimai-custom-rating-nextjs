@@ -6,21 +6,47 @@ import Image from "next/image";
 
 function ToggleImage({ src }) {
   const [isGray, setIsGray] = useState(false);
+  const [borderColor, setBorderColor] = useState("#C27FF4"); // 초기 색상
+  const colors = ["#FA6C75", "#C27FF4", "#E5DDEA"];
+
+  // border 클릭 시 색상 변경
+  const handleBorderClick = () => {
+    const currentIndex = colors.indexOf(borderColor);
+    const nextColor = colors[(currentIndex + 1) % colors.length];
+    setBorderColor(nextColor);
+  };
 
   return (
-    <Image
-      src={src}
-      alt="Toggle Image"
-      width={200}
-      height={200}
+    <div
       style={{
+        display: "inline-block",
+        border: `10px solid ${borderColor}`,
+        cursor: "pointer",
+        width: "200px",
+        height: "200px",
+        boxSizing: "border-box",
         filter: isGray ? "grayscale(100%) brightness(50%)" : "none",
         transition: "filter 0.5s ease-in-out",
         cursor: "pointer",
-        border: "10px solid #C27FF4",
       }}
-      onClick={() => setIsGray(!isGray)}
-    />
+      onClick={handleBorderClick}
+    >
+      <Image
+        src={src}
+        alt="Toggle Image"
+        width={200}
+        height={200}
+        onClick={(e) => {
+          e.stopPropagation(); // 상위 div 클릭 방지
+          setIsGray((prev) => !prev);
+        }}
+        style={{
+          filter: isGray ? "grayscale(100%) brightness(50%)" : "none",
+          transition: "filter 0.5s ease-in-out",
+          cursor: "pointer",
+        }}
+      />
+    </div>
   );
 }
 
@@ -29,16 +55,48 @@ export default function Home() {
   const router = useRouter();
   const [showFooter, setShowFooter] = useState(false);
 
-  const images = [
-    "e5a64880bc872e8b",
-    "60d2b1b662ae5823",
-    "be3cf43e80e9462e",
-    "5c4531323f4aadcf",
-    "a259af51e0b9d863",
-    "92fed24b2755bbb4",
-    "2c80b1a894f03420",
-    "cb40822c0f5a3ec1",
-  ];
+  const [images, setImages] = useState([
+    {
+      link: "e5a64880bc872e8b",
+      isGray: false,
+    },
+    {
+      link: "60d2b1b662ae5823",
+      isGray: false,
+    },
+    {
+      link: "be3cf43e80e9462e",
+      isGray: false,
+    },
+    {
+      link: "5c4531323f4aadcf",
+      isGray: false,
+    },
+    {
+      link: "a259af51e0b9d863",
+      isGray: false,
+    },
+    {
+      link: "92fed24b2755bbb4",
+      isGray: false,
+    },
+    {
+      link: "cb40822c0f5a3ec1",
+      isGray: false,
+    },
+    {
+      link: "8043243d47cacaee",
+      isGray: false,
+    },
+  ]);
+
+  useEffect(() => {
+    setShowFooter(true);
+  }, []);
+
+  if (!showFooter) {
+    return null;
+  }
 
   return (
     <div className={styles.container}>
@@ -72,10 +130,10 @@ export default function Home() {
             padding: "300px",
           }}
         >
-          {images.map((image, index) => (
+          {images.map(({ link, isGray }) => (
             <ToggleImage
-              key={index}
-              src={`https://maimaidx-eng.com/maimai-mobile/img/Music/${image}.png`}
+              key={link}
+              src={`https://maimaidx-eng.com/maimai-mobile/img/Music/${link}.png`}
             />
           ))}
         </div>
