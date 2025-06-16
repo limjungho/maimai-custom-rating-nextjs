@@ -28,15 +28,15 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/custom-rating"
+                  href="/whatiscustomrating"
                   className="text-sm text-gray-600 hover:text-blue-600 transition-colors"
                 >
-                  Custom Rating
+                  Custom Rating이란?
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/update-help"
+                  href="/help"
                   className="text-sm text-gray-600 hover:text-blue-600 transition-colors"
                 >
                   Update & Help
@@ -51,7 +51,7 @@ export function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="https://maimai.sega.com/"
+                  href="https://maimaidx-eng.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm text-gray-600 hover:text-blue-600 transition-colors"
@@ -61,12 +61,12 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="https://maimaidx-eng.com/"
+                  href="https://x.com/CYGame_Contest"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm text-gray-600 hover:text-blue-600 transition-colors"
                 >
-                  maimaiDX International
+                  싸이뮤직 게임 콘테스트 트위터(X) 계정
                 </Link>
               </li>
             </ul>
