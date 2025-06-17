@@ -85,6 +85,7 @@ export default function Home() {
                 type="submit"
                 className="h-11 px-6 bg-gray-100 hover:bg-gray-200 text-gray-800 border border-gray-300 rounded-full font-medium"
                 variant="outline"
+                disabled={!friendcode.trim()}
               >
                 검색
               </Button>

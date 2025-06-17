@@ -136,7 +136,7 @@ export default function BookmarkGuide() {
             {/* Step 3 */}
             <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold">
+                <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold shrink-0">
                   3
                 </div>
                 <h3 className="text-lg font-semibold">
