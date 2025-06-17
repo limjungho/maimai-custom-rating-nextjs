@@ -88,7 +88,7 @@ export default function Component() {
     difficulty: `${userdata[index].difficulty}`,
     level: `${Number(userdata[index].level).toFixed(1)}`,
     score: `${userdata[index].musicscore}`,
-    fcAp: `${userdata[index].fcap}`,
+    fcap: `${userdata[index].fcap}`,
     musicRating: `${userdata[index].musicrating}`,
   }));
 
@@ -102,32 +102,6 @@ export default function Component() {
         return "bg-[#E5DDEA] text-black";
       default:
         return "bg-gray-500";
-    }
-  };
-
-  const getFcApColor = (fcAp) => {
-    switch (fcAp) {
-      case "FC":
-        return "bg-[#77D757]";
-      case "FC+":
-        return "bg-[#77D757]";
-      case "AP":
-        return "bg-[#C9262B]";
-      case "AP+":
-        return "bg-[#C9262B]";
-      default:
-        return "bg-white text-black";
-    }
-  };
-
-  const getDXSTDColor = (dxstd) => {
-    switch (dxstd) {
-      case "DX":
-        return "bg-gradient-to-r from-red-500 via-yellow-500 to-blue-500";
-      case "STD":
-        return "bg-[#7AC4FF]";
-      default:
-        return "";
     }
   };
 
@@ -194,10 +168,10 @@ export default function Component() {
                 <TableRow>
                   <TableHead className="w-[60px]">No.</TableHead>
                   <TableHead className="min-w-[200px]">Musicname</TableHead>
-                  <TableHead className="w-[80px]">DX STD</TableHead>
-                  <TableHead className="w-[100px]">Difficulty</TableHead>
-                  <TableHead className="w-[80px]">Level</TableHead>
-                  <TableHead className="w-[120px]">Score</TableHead>
+                  <TableHead className="w-[90px]">DX STD</TableHead>
+                  <TableHead className="w-[120px]">Difficulty</TableHead>
+                  <TableHead className="w-[90px]">Level</TableHead>
+                  <TableHead className="w-[130px]">Score</TableHead>
                   <TableHead className="w-[80px]">FC / AP</TableHead>
                   <TableHead className="w-[120px]">Music Rating</TableHead>
                 </TableRow>
@@ -205,46 +179,84 @@ export default function Component() {
               <TableBody>
                 {isLoaded &&
                   musicData.map((music) => (
-                    <TableRow key={music.no} className="hover:bg-muted/50">
-                      <TableCell className="font-medium">{music.no}</TableCell>
-                      <TableCell className="font-medium">
+                    <TableRow
+                      key={music.no}
+                      className="hover:bg-muted/50 h-[60px]"
+                    >
+                      <TableCell className="font-medium text-base">
+                        {music.no}
+                      </TableCell>
+                      <TableCell className="font-medium text-base">
                         {music.musicname}
                       </TableCell>
                       <TableCell>
-                        <Badge
-                          variant={
-                            music.dxStd === "DX" ? "default" : "secondary"
-                          }
-                          className={`pointer-events-none ${getDXSTDColor(
-                            music.dxStd
-                          )}`}
-                        >
-                          {music.dxStd}
-                        </Badge>
+                        {music.dxStd === "DX" ? (
+                          <img
+                            src="https://maimaidx-eng.com/maimai-mobile/img/music_dx.png"
+                            alt="DX Image"
+                          />
+                        ) : music.dxStd === "STD" ? (
+                          <img
+                            src="https://maimaidx-eng.com/maimai-mobile/img/music_standard.png"
+                            alt="STD Image"
+                          />
+                        ) : null}
                       </TableCell>
-                      <TableCell className="flex justify-center">
-                        <Badge
-                          className={`text-white pointer-events-none ${getDifficultyColor(
-                            music.difficulty
-                          )}`}
-                        >
-                          {music.difficulty}
-                        </Badge>
+                      <TableCell>
+                        {music.difficulty === "EXP" ? (
+                          <img
+                            src="https://maimaidx-eng.com/maimai-mobile/img/diff_expert.png"
+                            alt="EXP Image"
+                            className="w-[80%] h-auto"
+                          />
+                        ) : music.difficulty === "MAS" ? (
+                          <img
+                            src="https://maimaidx-eng.com/maimai-mobile/img/diff_master.png"
+                            alt="MAS Image"
+                            className="w-[80%] h-auto"
+                          />
+                        ) : music.difficulty === "ReMAS" ? (
+                          <img
+                            src="https://maimaidx-eng.com/maimai-mobile/img/diff_remaster.png"
+                            alt="ReMAS Image"
+                            className="w-[80%] h-auto"
+                          />
+                        ) : null}
                       </TableCell>
-                      <TableCell className="font-mono">{music.level}</TableCell>
-                      <TableCell className="font-mono">{music.score}</TableCell>
-                      <TableCell className="flex justify-center">
-                        {music.fcAp && (
-                          <Badge
-                            className={`text-white pointer-events-none ${getFcApColor(
-                              music.fcAp
-                            )}`}
-                          >
-                            {music.fcAp}
-                          </Badge>
-                        )}
+                      <TableCell className="font-mono text-base">
+                        {music.level}
                       </TableCell>
-                      <TableCell className="font-mono font-bold">
+                      <TableCell className="font-mono text-base">
+                        {music.score}
+                      </TableCell>
+                      <TableCell>
+                        {music.fcap === "FC" ? (
+                          <img
+                            src="https://maimaidx-eng.com/maimai-mobile/img/music_icon_fc.png"
+                            alt="FC Image"
+                            class-Name="w-[30%] h-auto"
+                          />
+                        ) : music.fcap === "FC+" ? (
+                          <img
+                            src="https://maimaidx-eng.com/maimai-mobile/img/music_icon_fcp.png"
+                            alt="FC+ Image"
+                            class-Name="w-[30%] h-auto"
+                          />
+                        ) : music.fcap === "AP" ? (
+                          <img
+                            src="https://maimaidx-eng.com/maimai-mobile/img/music_icon_ap.png"
+                            alt="AP Image"
+                            class-Name="w-[30%] h-auto"
+                          />
+                        ) : music.fcap === "AP+" ? (
+                          <img
+                            src="https://maimaidx-eng.com/maimai-mobile/img/music_icon_app.png"
+                            alt="AP+ Image"
+                            class-Name="w-[30%] h-auto"
+                          />
+                        ) : null}
+                      </TableCell>
+                      <TableCell className="font-mono font-bold text-base">
                         {music.musicRating}
                       </TableCell>
                     </TableRow>

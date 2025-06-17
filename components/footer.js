@@ -51,22 +51,22 @@ export function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="https://maimaidx-eng.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-gray-600 hover:text-blue-600 transition-colors"
-                >
-                  maimaiDX 공식 홈페이지
-                </Link>
-              </li>
-              <li>
-                <Link
                   href="https://x.com/CYGame_Contest"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm text-gray-600 hover:text-blue-600 transition-colors"
                 >
                   싸이뮤직 게임 콘테스트 트위터(X) 계정
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="https://maimaidx-eng.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-gray-600 hover:text-blue-600 transition-colors"
+                >
+                  maimaiDX 공식 홈페이지
                 </Link>
               </li>
             </ul>
@@ -76,10 +76,10 @@ export function Footer() {
         {/* Copyright */}
         <div className="border-t border-gray-200 mt-8 pt-6 text-center">
           <p className="text-sm text-gray-500">
-            © 2024 maimaiDX Custom Rating. All rights reserved.
+            © 2025 maimaiDX Custom Rating. All rights reserved.
           </p>
           <p className="text-xs text-gray-400 mt-1">
-            This is an unofficial fan-made project. maimai is a trademark of
+            This is an unofficial fan-made project. maimaiDX is a trademark of
             SEGA Corporation.
           </p>
         </div>

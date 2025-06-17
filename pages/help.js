@@ -119,10 +119,11 @@ export default function BookmarkGuide() {
                         <Badge variant="outline" className="bg-white">
                           Ctrl+Shift+O
                         </Badge>
+                        → 마우스 우클릭 → 새 북마크 추가
                       </div>
                       <p>
-                        • 또는 더보기 → 북마크 및 목록 → 북마크 관리자 → 새
-                        북마크 추가
+                        • 또는 더보기 → 북마크 및 목록 → 북마크 관리자 → 마우스
+                        우클릭 → 새 북마크 추가
                       </p>
                     </div>
                   </div>

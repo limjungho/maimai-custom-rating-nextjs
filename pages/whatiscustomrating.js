@@ -117,7 +117,7 @@ export default function whatiscustomrating() {
                         Achievement 100.8000% 이상
                       </p>
                       <p className="text-sm text-muted-foreground">
-                        높은 정확도 달성
+                        AP에 가까워지는 달성도
                       </p>
                     </div>
                   </div>
@@ -127,12 +127,12 @@ export default function whatiscustomrating() {
                 <div className="flex items-center justify-between p-4 bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg border border-blue-200">
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
-                      <span className="text-white font-bold text-sm">FC</span>
+                      <span className="text-white font-bold text-sm">FC+</span>
                     </div>
                     <div>
                       <p className="font-semibold">FULL COMBO+ 달성</p>
                       <p className="text-sm text-muted-foreground">
-                        완벽한 콤보 연결
+                        FULL SYNC DX에 필요한 FULL COMBO+ 조건
                       </p>
                     </div>
                   </div>
@@ -147,7 +147,7 @@ export default function whatiscustomrating() {
                     <div>
                       <p className="font-semibold">ALL PERFECT 달성</p>
                       <p className="text-sm text-muted-foreground">
-                        FC+ 달성 이후 AP 달성 시 +2점
+                        FULL COMBO+ 달성 이후 ALL PERFECT 달성 시 +2점
                       </p>
                     </div>
                   </div>
