@@ -6,6 +6,7 @@ import styles from "../styles/Home.module.css";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import LoadingScreen from "@/components/LoadingScreen";
+import Image from "next/image";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
@@ -168,12 +169,18 @@ export default function Component() {
                 <TableRow>
                   <TableHead className="w-[60px]">No.</TableHead>
                   <TableHead className="min-w-[200px]">Musicname</TableHead>
-                  <TableHead className="w-[90px]">DX STD</TableHead>
-                  <TableHead className="w-[120px]">Difficulty</TableHead>
-                  <TableHead className="w-[90px]">Level</TableHead>
-                  <TableHead className="w-[130px]">Score</TableHead>
-                  <TableHead className="w-[80px]">FC / AP</TableHead>
-                  <TableHead className="w-[120px]">Music Rating</TableHead>
+                  <TableHead className="w-[90px] text-center">DX STD</TableHead>
+                  <TableHead className="w-[120px] text-center">
+                    Difficulty
+                  </TableHead>
+                  <TableHead className="w-[90px] text-center">Level</TableHead>
+                  <TableHead className="w-[130px] text-center">Score</TableHead>
+                  <TableHead className="w-[70px] text-center">
+                    FC / AP
+                  </TableHead>
+                  <TableHead className="w-[120px] text-center">
+                    Music Rating
+                  </TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -181,7 +188,7 @@ export default function Component() {
                   musicData.map((music) => (
                     <TableRow
                       key={music.no}
-                      className="hover:bg-muted/50 h-[60px]"
+                      className="hover:bg-muted/50 h-[65px]"
                     >
                       <TableCell className="font-medium text-base">
                         {music.no}
@@ -191,72 +198,92 @@ export default function Component() {
                       </TableCell>
                       <TableCell>
                         {music.dxStd === "DX" ? (
-                          <img
+                          <Image
                             src="https://maimaidx-eng.com/maimai-mobile/img/music_dx.png"
                             alt="DX Image"
+                            width={128}
+                            height={128}
+                            className="object-cover"
                           />
                         ) : music.dxStd === "STD" ? (
-                          <img
+                          <Image
                             src="https://maimaidx-eng.com/maimai-mobile/img/music_standard.png"
-                            alt="STD Image"
+                            alt="DX Image"
+                            width={128}
+                            height={128}
+                            className="object-cover"
                           />
                         ) : null}
                       </TableCell>
                       <TableCell>
                         {music.difficulty === "EXP" ? (
-                          <img
+                          <Image
                             src="https://maimaidx-eng.com/maimai-mobile/img/diff_expert.png"
-                            alt="EXP Image"
-                            className="w-[80%] h-auto"
+                            alt="DX Image"
+                            width={128}
+                            height={128}
+                            className="object-cover"
                           />
                         ) : music.difficulty === "MAS" ? (
-                          <img
+                          <Image
                             src="https://maimaidx-eng.com/maimai-mobile/img/diff_master.png"
-                            alt="MAS Image"
-                            className="w-[80%] h-auto"
+                            alt="DX Image"
+                            width={128}
+                            height={128}
+                            className="object-cover"
                           />
                         ) : music.difficulty === "ReMAS" ? (
-                          <img
+                          <Image
                             src="https://maimaidx-eng.com/maimai-mobile/img/diff_remaster.png"
-                            alt="ReMAS Image"
-                            className="w-[80%] h-auto"
+                            alt="DX Image"
+                            width={128}
+                            height={128}
+                            className="object-cover"
                           />
                         ) : null}
                       </TableCell>
-                      <TableCell className="font-mono text-base">
+                      <TableCell className="font-mono text-base text-center">
                         {music.level}
                       </TableCell>
-                      <TableCell className="font-mono text-base">
+                      <TableCell className="font-mono text-base text-center">
                         {music.score}
                       </TableCell>
-                      <TableCell>
+                      <TableCell className="flex items-center justify-center">
                         {music.fcap === "FC" ? (
-                          <img
+                          <Image
                             src="https://maimaidx-eng.com/maimai-mobile/img/music_icon_fc.png"
-                            alt="FC Image"
-                            class-Name="w-[30%] h-auto"
+                            alt="DX Image"
+                            width={64}
+                            height={64}
+                            className="w-[80%] object-cover"
                           />
                         ) : music.fcap === "FC+" ? (
-                          <img
+                          <Image
                             src="https://maimaidx-eng.com/maimai-mobile/img/music_icon_fcp.png"
-                            alt="FC+ Image"
-                            class-Name="w-[30%] h-auto"
+                            alt="DX Image"
+                            width={64}
+                            height={64}
+                            className="w-[80%] object-cover"
                           />
                         ) : music.fcap === "AP" ? (
-                          <img
+                          <Image
                             src="https://maimaidx-eng.com/maimai-mobile/img/music_icon_ap.png"
-                            alt="AP Image"
-                            class-Name="w-[30%] h-auto"
+                            alt="DX Image"
+                            width={64}
+                            height={64}
+                            className="w-[80%] object-cover"
                           />
                         ) : music.fcap === "AP+" ? (
-                          <img
+                          <Image
                             src="https://maimaidx-eng.com/maimai-mobile/img/music_icon_app.png"
-                            alt="AP+ Image"
-                            class-Name="w-[30%] h-auto"
+                            alt="DX Image"
+                            width={64}
+                            height={64}
+                            className="w-[80%] object-cover"
                           />
                         ) : null}
                       </TableCell>
-                      <TableCell className="font-mono font-bold text-base">
+                      <TableCell className="font-mono font-bold text-base text-center">
                         {music.musicRating}
                       </TableCell>
                     </TableRow>
