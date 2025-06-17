@@ -58,7 +58,7 @@ export default function whatiscustomrating() {
             <CardContent>
               <div className="space-y-3">
                 <div className="flex items-center gap-2">
-                  <Badge variant="outline" className="bg-blue-50">
+                  <Badge variant="outline" className="bg-blue-50 text-sm">
                     신곡/구곡 구분 없음
                   </Badge>
                 </div>
@@ -81,7 +81,7 @@ export default function whatiscustomrating() {
             <CardContent>
               <div className="space-y-3">
                 <div className="flex items-center gap-2">
-                  <Badge className="bg-green-100 text-green-800">
+                  <Badge className="bg-green-100 text-green-800 text-sm">
                     레벨 13 이상
                   </Badge>
                 </div>
@@ -121,7 +121,9 @@ export default function whatiscustomrating() {
                       </p>
                     </div>
                   </div>
-                  <Badge className="bg-purple-500 text-white">+3점</Badge>
+                  <Badge className="bg-purple-500 text-white text-base">
+                    +3점
+                  </Badge>
                 </div>
 
                 <div className="flex items-center justify-between p-4 bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg border border-blue-200">
@@ -136,7 +138,9 @@ export default function whatiscustomrating() {
                       </p>
                     </div>
                   </div>
-                  <Badge className="bg-blue-500 text-white">+1점</Badge>
+                  <Badge className="bg-blue-500 text-white text-base">
+                    +1점
+                  </Badge>
                 </div>
 
                 <div className="flex items-center justify-between p-4 bg-gradient-to-r from-amber-50 to-amber-100 rounded-lg border border-amber-200">
@@ -151,7 +155,9 @@ export default function whatiscustomrating() {
                       </p>
                     </div>
                   </div>
-                  <Badge className="bg-amber-500 text-white">+3점</Badge>
+                  <Badge className="bg-amber-500 text-white text-base">
+                    +3점
+                  </Badge>
                 </div>
               </div>
 
@@ -165,7 +171,7 @@ export default function whatiscustomrating() {
                   </span>
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  기존 Rating 대비 한 곡에서{" "}
+                  기존 Rating 대비 1곡에서{" "}
                   <span className="font-semibold text-green-600">최대 6점</span>
                   을 추가로 획득할 수 있습니다.
                 </p>
