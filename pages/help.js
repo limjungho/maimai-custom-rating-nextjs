@@ -68,7 +68,7 @@ export default function BookmarkGuide() {
             {/* Step 1 */}
             <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">
+                <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold shrink-0">
                   1
                 </div>
                 <h3 className="text-lg font-semibold">
@@ -98,7 +98,7 @@ export default function BookmarkGuide() {
             {/* Step 2 */}
             <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white font-bold">
+                <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white font-bold shrink-0">
                   2
                 </div>
                 <h3 className="text-lg font-semibold">
@@ -179,7 +179,7 @@ export default function BookmarkGuide() {
             {/* Step 1 */}
             <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold">
+                <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold shrink-0">
                   1
                 </div>
                 <h3 className="text-lg font-semibold">
@@ -214,7 +214,7 @@ export default function BookmarkGuide() {
             {/* Step 2 */}
             <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white font-bold">
+                <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white font-bold shrink-0">
                   2
                 </div>
                 <h3 className="text-lg font-semibold">

@@ -109,7 +109,7 @@ export default function whatiscustomrating() {
               <div className="grid gap-4">
                 <div className="flex items-center justify-between p-4 bg-gradient-to-r from-purple-50 to-purple-100 rounded-lg border border-purple-200">
                   <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center">
+                    <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center shrink-0">
                       <span className="text-white font-bold text-sm">%</span>
                     </div>
                     <div>
@@ -121,14 +121,14 @@ export default function whatiscustomrating() {
                       </p>
                     </div>
                   </div>
-                  <Badge className="bg-purple-500 text-white text-base">
+                  <Badge className="w-15 bg-purple-500 text-white text-base truncate shrink-0">
                     +3점
                   </Badge>
                 </div>
 
                 <div className="flex items-center justify-between p-4 bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg border border-blue-200">
                   <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+                    <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center shrink-0">
                       <span className="text-white font-bold text-sm">FC+</span>
                     </div>
                     <div>
@@ -138,14 +138,14 @@ export default function whatiscustomrating() {
                       </p>
                     </div>
                   </div>
-                  <Badge className="bg-blue-500 text-white text-base">
+                  <Badge className="w-15 bg-blue-500 text-white text-base truncate shrink-0">
                     +1점
                   </Badge>
                 </div>
 
                 <div className="flex items-center justify-between p-4 bg-gradient-to-r from-amber-50 to-amber-100 rounded-lg border border-amber-200">
                   <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-amber-500 rounded-full flex items-center justify-center">
+                    <div className="w-8 h-8 bg-amber-500 rounded-full flex items-center justify-center shrink-0">
                       <span className="text-white font-bold text-sm">AP</span>
                     </div>
                     <div>
@@ -155,7 +155,7 @@ export default function whatiscustomrating() {
                       </p>
                     </div>
                   </div>
-                  <Badge className="bg-amber-500 text-white text-base">
+                  <Badge className="w-15 bg-amber-500 text-white text-base truncate shrink-0">
                     +3점
                   </Badge>
                 </div>
