@@ -177,7 +177,7 @@ var fetchSequentially = async () => {
   await sleep(LoadingTime);
 
   alert("갱신이 완료되었습니다.\n확인을 클릭하면 INFO 화면으로 이동합니다.");
-  window.open(URL + "/rating?friendcode=" + friendcode, "_blank"); // 새 탭에서 URL 열기
+  window.open(URL + "/ratingresult?friendcode=" + friendcode, "_blank"); // 새 탭에서 URL 열기
 };
 
 fetchSequentially();
