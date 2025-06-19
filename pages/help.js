@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 import NextLink from "next/link";
 import { toast } from "sonner";
+import Head from "next/head";
 
 export default function BookmarkGuide() {
   const bookmarkCode = `javascript:(function(){var script = document.createElement('script'); script.src = 'https://www.maimaicustomrating.site/bookmark.js'; document.body.appendChild(script);})();`;

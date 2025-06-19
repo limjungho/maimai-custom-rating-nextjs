@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import LoadingScreen from "@/components/LoadingScreen";
 import Image from "next/image";
+import Head from "next/head";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {

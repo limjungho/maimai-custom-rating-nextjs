@@ -8,6 +8,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Star, Trophy, Target, Zap, Award, Info } from "lucide-react";
+import Head from "next/head";
 
 export default function whatiscustomrating() {
   return (
