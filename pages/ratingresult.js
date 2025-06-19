@@ -60,9 +60,11 @@ export default function Component() {
                 setIsRegistered(true);
                 setuserdata(sortData(resp.data));
               } else {
+                alert(
+                  "등록되지 않은 유저입니다. Update & Help 페이지를 참고해주세요."
+                );
                 setIsRegistered(false);
               }
-
               setIsLoaded(true);
             }
           } catch (error) {
@@ -105,7 +107,6 @@ export default function Component() {
         return "bg-gray-500";
     }
   };
-
   return (
     <div className="container mx-auto p-6 space-y-6">
       {/* Player Information Card */}
