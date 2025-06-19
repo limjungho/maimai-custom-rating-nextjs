@@ -109,6 +109,25 @@ export default function Component() {
   };
   return (
     <div className="container mx-auto p-6 space-y-6">
+      <Head>
+        <title>maimaiDX Custom Rating</title>
+        <meta name="description" content="Main Page" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta property="og:title" content="maimaiDX Custom Rating" />
+        <meta
+          property="og:description"
+          content="maimaiDX 커스텀 레이팅 웹서비스"
+        />
+        <meta
+          property="og:image"
+          content="https://www.maimaicustomrating.site/ogImage.png"
+        />
+        <meta
+          property="og:url"
+          content="https://www.maimaicustomrating.site/"
+        />
+        <meta property="og:type" content="website" />
+      </Head>
       {/* Player Information Card */}
       <Card>
         <CardHeader>
