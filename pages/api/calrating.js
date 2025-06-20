@@ -12,27 +12,16 @@ const cors = Cors({
   origin: "https://maimaidx-eng.com", // 허용할 도메인
 });
 
-// 미들웨어 사용 헬퍼 함수
-function runMiddleware(req, res, fn) {
-  return new Promise((resolve, reject) => {
-    fn(req, res, (result) => {
-      if (result instanceof Error) {
-        return reject(result);
-      }
-      return resolve(result);
-    });
-  });
-}
-
 export default async function handler(req, res) {
-  // CORS 미들웨어 실행
-  await runMiddleware(req, res, cors);
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-
   if (req.method !== "POST") {
     return res.status(405).end(); // 명시적으로 처리
+  }
+  res.setHeader("Access-Control-Allow-Origin", "https://maimaidx-eng.com");
+  res.setHeader("Access-Control-Allow-Methods", "GET,POST,OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+
+  if (req.method === "OPTIONS") {
+    return res.status(200).end(); // 프리플라이트 요청 응답
   }
 
   const {
