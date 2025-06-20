@@ -16,30 +16,24 @@ var sleep = (ms) => {
 };
 
 var fetchSequentially = async () => {
-  alert(
-    "확인을 누르면 갱신을 진행합니다.\n확인을 누른 이후 알림창이 새로 나타날 때까지 기다려주세요.(15초)"
-  );
   //1. URL에서 friend code, player name, original rating 정보 fetch
   try {
-    var resp1 = await fetch(
+    const response = await fetch(
       "https://maimaidx-eng.com/maimai-mobile/friend/userFriendCode/"
-    )
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.text();
-      })
-      .then((html) => {
-        // HTML 문자열을 DOM 객체로 변환
-        const parser = new DOMParser();
-        const document = parser.parseFromString(html, "text/html");
+    );
 
-        // 가져온 문서 내에서 특정 요소 선택
-        friendcode = document.querySelector("div.see_through_block").innerText;
-        playername = document.querySelector("div.name_block").innerText;
-        originalrating = document.querySelector("div.rating_block").innerText;
-      });
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+
+    const html = await response.text();
+
+    const parser = new DOMParser();
+    const document = parser.parseFromString(html, "text/html");
+
+    friendcode = document.querySelector("div.see_through_block").innerText;
+    playername = document.querySelector("div.name_block").innerText;
+    originalrating = document.querySelector("div.rating_block").innerText;
   } catch (error) {
     console.error("Error fetching data:", error);
   }

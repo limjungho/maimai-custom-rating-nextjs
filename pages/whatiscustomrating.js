@@ -101,7 +101,7 @@ export default function whatiscustomrating() {
             <CardContent>
               <div className="space-y-3">
                 <div className="flex items-center gap-2">
-                  <Badge className="bg-green-100 text-green-800 text-sm">
+                  <Badge className="bg-green-100 text-green-800 text-sm pointer-events-none">
                     레벨 13 이상
                   </Badge>
                 </div>
@@ -141,7 +141,7 @@ export default function whatiscustomrating() {
                       </p>
                     </div>
                   </div>
-                  <Badge className="w-15 bg-purple-500 text-white text-base truncate shrink-0">
+                  <Badge className="w-15 bg-purple-500 text-white text-base truncate shrink-0 pointer-events-none">
                     +3점
                   </Badge>
                 </div>
@@ -158,7 +158,7 @@ export default function whatiscustomrating() {
                       </p>
                     </div>
                   </div>
-                  <Badge className="w-15 bg-blue-500 text-white text-base truncate shrink-0">
+                  <Badge className="w-15 bg-blue-500 text-white text-base truncate shrink-0 pointer-events-none">
                     +1점
                   </Badge>
                 </div>
@@ -175,7 +175,7 @@ export default function whatiscustomrating() {
                       </p>
                     </div>
                   </div>
-                  <Badge className="w-15 bg-amber-500 text-white text-base truncate shrink-0">
+                  <Badge className="w-15 bg-amber-500 text-white text-base truncate shrink-0 pointer-events-none">
                     +3점
                   </Badge>
                 </div>
