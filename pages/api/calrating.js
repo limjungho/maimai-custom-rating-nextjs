@@ -31,6 +31,10 @@ export default async function handler(req, res) {
   res.setHeader("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
+  if (req.method !== "POST") {
+    return res.status(405).end(); // 명시적으로 처리
+  }
+
   const {
     musicnamedata,
     dxstddata,
