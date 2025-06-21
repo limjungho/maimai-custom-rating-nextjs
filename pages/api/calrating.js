@@ -81,6 +81,7 @@ export default async function handler(req, res) {
         console.log("Music Data Not Found : ", error);
       }
 
+      try {
       var achiv = parseFloat(musicscoredata[i].slice(0, -1)) / 100.0;
       var achivnum = 0;
       if (achiv >= 1.005) {
@@ -96,7 +97,6 @@ export default async function handler(req, res) {
       } else if (achiv >= 0.97) {
         achivnum = 20.0;
       }
-      try {
         if (achiv >= 1.005) {
           musicrating = parseInt(musicdata[0].level * 1.005 * achivnum);
         } else {
@@ -110,11 +110,8 @@ export default async function handler(req, res) {
         } else if (fcapdata[i] === "FC+") {
           musicrating += 1;
         }
-      } catch (error) {
-        console.log("music rating Error : ", error);
-      }
 
-      //RatingList에 rating 추가
+        //RatingList에 rating 추가
       RatingList.push({
         musicrating: musicrating,
         musicname: musicnamedata[i],
@@ -124,6 +121,9 @@ export default async function handler(req, res) {
         musicscore: musicscoredata[i],
         fcap: fcapdata[i],
       });
+      } catch (error) {
+        console.log("music rating Error : ", error);
+      }
     }
 
     RatingList.sort(
