@@ -83,6 +83,16 @@ export default function Component() {
       </div>
     );
   }
+
+  if (musicData.length === 0) {
+    return (
+      <div className="h-screen flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold mb-4">악곡 데이터를 찾을 수 없습니다.</h1>
+        </div>
+      </div>
+    );
+  }
   // 50 music data
   const musicData = Array.from({ length: 50 }, (_, index) => ({
     no: index + 1,
