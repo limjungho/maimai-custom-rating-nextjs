@@ -83,8 +83,10 @@ export default function Component() {
       </div>
     );
   }
-  // 50 music data
-  const musicData = Array.from({ length: 50 }, (_, index) => ({
+
+  // 50 or min length music data
+  const dataLength = Math.min(50, userdata.length);
+  const musicData = Array.from({ length: dataLength }, (_, index) => ({
     no: index + 1,
     musicname: `${userdata[index].musicname}`,
     dxStd: `${userdata[index].dxstd}`,
