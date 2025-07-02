@@ -76,9 +76,16 @@ export default function RhythmGameSongSelector() {
   // 최종 게임 진행 함수
   const proceedToGame = () => {
     // 제외되지 않은 4곡 필터링
-    const remainingSongs = shuffledSongs.filter(
-      (_, index) => !excludedSongs.includes(index)
-    );
+    const remainingSongs = shuffledSongs
+      .map((song, index) => {
+        return {
+          index: index,
+          song: song,
+          borderColor: borderColor[index],
+          dxstdbutton: dxstdbutton[index],
+        };
+      })
+      .filter((item) => !excludedSongs.includes(item.index));
 
     if (remainingSongs.length !== 4) {
       alert("정확히 4곡을 남겨야 합니다!");
@@ -284,12 +291,15 @@ export default function RhythmGameSongSelector() {
       {/* 무작위로 섞인 곡들의 이미지 1x8 배열 표시 */}
       {finalSets.set1.length === 0 && shuffledSongs.length >= 1 && (
         <Card>
-          <CardContent className="p-6">
-            <h2 className="text-xl font-semibold mb-4 text-center">
+          <CardContent
+            className="bg-[url('/phase.png')]
+        bg-cover bg-center bg-no-repeat p-6"
+          >
+            <h2 className="select-none text-xl font-semibold mb-4 text-center">
               게임 순서 (무작위)
             </h2>
             {finalSets.set1.length === 0 && (
-              <p className="text-center text-muted-foreground mb-4">
+              <p className="select-none text-center text-muted-foreground mb-4">
                 곡을 클릭하여 제외하세요
               </p>
             )}
@@ -299,7 +309,7 @@ export default function RhythmGameSongSelector() {
                 {(() => {
                   const maxExcludable = Math.max(0, shuffledSongs.length - 4);
                   return (
-                    <Badge variant="outline" className="text-sm">
+                    <Badge variant="outline" className="select-none text-sm">
                       제외된 곡: {excludedSongs.length}/{maxExcludable}
                     </Badge>
                   );
@@ -307,7 +317,7 @@ export default function RhythmGameSongSelector() {
               </div>
             )}
             <div
-              className={`grid gap-2`}
+              className={`grid gap-2 my-20`}
               style={{
                 gridTemplateColumns: `repeat(8, 1fr)`,
               }}
@@ -317,13 +327,9 @@ export default function RhythmGameSongSelector() {
                 return (
                   <div
                     key={index}
-                    className={`transition-all border-8 border-[${
+                    className={`cursor-pointer transition-all border-8 border-[${
                       borderColor[index]
-                    }] ${
-                      isExcluded
-                        ? "brightness-[0.3] cursor-pointer"
-                        : " cursor-pointer"
-                    }`}
+                    }] ${isExcluded ? "brightness-[0.3]" : undefined}`}
                     onClick={
                       finalSets.set1.length === 0
                         ? () => handleBorderClick(index)
@@ -336,7 +342,7 @@ export default function RhythmGameSongSelector() {
                         alt={song.musicname}
                         width={190}
                         height={190}
-                        className={`aspect-square overflow-hidden transition-all`}
+                        className={`aspect-square overflow-hidden`}
                         onClick={
                           finalSets.set1.length === 0
                             ? (e) => {
@@ -346,30 +352,13 @@ export default function RhythmGameSongSelector() {
                             : undefined
                         }
                       />
-                      {dxstdbutton[index] == "std" && (
-                        <Image
-                          src="https://maimaidx-eng.com/maimai-mobile/img/music_standard.png"
-                          alt="DX Image"
-                          width={64}
-                          height={64}
-                          className="absolute top-[90] left-[44]"
-                          onClick={
-                            finalSets.set1.length === 0
-                              ? (e) => {
-                                  e.stopPropagation();
-                                  handledxstdClick(index);
-                                }
-                              : undefined
-                          }
-                        />
-                      )}
                       {dxstdbutton[index] == "dx" && (
                         <Image
                           src="https://maimaidx-eng.com/maimai-mobile/img/music_dx.png"
                           alt="DX Image"
                           width={64}
                           height={64}
-                          className="absolute top-[90] left-[44]"
+                          className="absolute top-[83%] left-[40%] w-[59%]"
                           onClick={
                             finalSets.set1.length === 0
                               ? (e) => {
@@ -380,12 +369,29 @@ export default function RhythmGameSongSelector() {
                           }
                         />
                       )}
+                      {dxstdbutton[index] == "std" && (
+                        <Image
+                          src="https://maimaidx-eng.com/maimai-mobile/img/music_standard.png"
+                          alt="DX Image"
+                          width={64}
+                          height={64}
+                          className="absolute top-[83%] left-[40%] w-[59%]"
+                          onClick={
+                            finalSets.set1.length === 0
+                              ? (e) => {
+                                  e.stopPropagation();
+                                  handledxstdClick(index);
+                                }
+                              : undefined
+                          }
+                        />
+                      )}
+                      {isExcluded && (
+                        <div className="brightness-100 isolate absolute z-10 inset-0 flex items-center justify-center pointer-events-none">
+                          <X className="text-white h-24 w-24" />
+                        </div>
+                      )}
                     </div>
-                    {isExcluded && (
-                      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                        <X className="text-white h-16 w-16" />
-                      </div>
-                    )}
                   </div>
                 );
               })}
@@ -422,56 +428,120 @@ export default function RhythmGameSongSelector() {
       {/* 최종 게임 세트 표시 */}
       {finalSets.set1.length > 0 && finalSets.set2.length > 0 && (
         <Card>
-          <CardContent className="p-6">
-            <h2 className="text-xl font-semibold mb-6 text-center">
+          <CardContent
+            className="bg-[url('/phase.png')]
+        bg-cover bg-center bg-no-repeat p-6"
+          >
+            <h2 className="select-none text-xl font-semibold mb-6 text-center">
               최종 게임 세트
             </h2>
-            <div className="grid grid-cols-2 gap-20">
+            <div className="grid grid-cols-2 my-20">
               {/* 1 Set */}
               <div>
-                <h3 className="text-lg font-semibold mb-4 text-center">
+                <h3 className="select-none text-lg font-semibold mb-4 text-center">
                   1 Set
                 </h3>
-                <div className="grid grid-cols-2 justify-items-center items-center">
-                  {finalSets.set1.map((song, index) => (
-                    <div
-                      key={index}
-                      className="aspect-square w-[190px] h-[190px] relative overflow-hidden border-8 border-[#C27FF4]"
-                    >
-                      <Image
-                        src={song.imglink || "/placeholder.svg"}
-                        alt={song.musicname}
-                        fill
-                        className="object-cover"
-                      />
-                      <div className="absolute inset-0 flex items-center justify-center"></div>
-                    </div>
-                  ))}
+                <div className="grid grid-cols-2 gap-8">
+                  {finalSets.set1.map((item, index) => {
+                    return (
+                      <div
+                        key={index}
+                        className={`flex ${
+                          index % 2 === 0 ? "justify-end" : "justify-start"
+                        }`}
+                      >
+                        <div
+                          className={`relative w-32 h-32 border-8 border-[${item.borderColor}] relative overflow-hidden`}
+                        >
+                          <Image
+                            src={item.song.imglink || "/placeholder.svg"}
+                            alt={item.song.musicname}
+                            fill
+                            className="object-cover"
+                          />
+                          {item.dxstdbutton == "dx" && (
+                            <Image
+                              src="https://maimaidx-eng.com/maimai-mobile/img/music_dx.png"
+                              alt="DX Image"
+                              width={64}
+                              height={64}
+                              className="absolute top-[83%] left-[40%] w-[59%]"
+                            />
+                          )}
+                          {item.dxstdbutton == "std" && (
+                            <Image
+                              src="https://maimaidx-eng.com/maimai-mobile/img/music_standard.png"
+                              alt="DX Image"
+                              width={64}
+                              height={64}
+                              className="absolute top-[83%] left-[40%] w-[59%]"
+                            />
+                          )}
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
 
               {/* 2 Set */}
               <div>
-                <h3 className="text-lg font-semibold mb-4 text-center">
+                <h3 className="select-none text-lg font-semibold mb-4 text-center">
                   2 Set
                 </h3>
-                <div className="grid grid-cols-2 justify-items-center items-center">
-                  {finalSets.set2.map((song, index) => (
-                    <div
-                      key={index}
-                      className="aspect-square w-[190px] h-[190px] relative overflow-hidden border-8 border-[#C27FF4]"
-                    >
-                      <Image
-                        src={song.imglink || "/placeholder.svg"}
-                        alt={song.musicname}
-                        fill
-                        className="object-cover"
-                      />
-                      <div className="absolute inset-0 flex items-center justify-center"></div>
-                    </div>
-                  ))}
+                <div className="grid grid-cols-2 gap-8">
+                  {finalSets.set2.map((item, index) => {
+                    return (
+                      <div
+                        key={index}
+                        className={`flex ${
+                          index % 2 === 0 ? "justify-end" : "justify-start"
+                        }`}
+                      >
+                        <div
+                          className={`relative w-32 h-32 border-8 border-[${item.borderColor}] relative overflow-hidden`}
+                        >
+                          <Image
+                            src={item.song.imglink || "/placeholder.svg"}
+                            alt={item.song.musicname}
+                            fill
+                            className="object-cover"
+                          />
+                          {item.dxstdbutton == "dx" && (
+                            <Image
+                              src="https://maimaidx-eng.com/maimai-mobile/img/music_dx.png"
+                              alt="DX Image"
+                              width={64}
+                              height={64}
+                              className="absolute top-[83%] left-[40%] w-[59%]"
+                            />
+                          )}
+                          {item.dxstdbutton == "std" && (
+                            <Image
+                              src="https://maimaidx-eng.com/maimai-mobile/img/music_standard.png"
+                              alt="DX Image"
+                              width={64}
+                              height={64}
+                              className="absolute top-[83%] left-[40%] w-[59%]"
+                            />
+                          )}
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
+            </div>
+            <div className="mt-4 text-center">
+              <Button
+                size="lg"
+                onClick={() => {
+                  setFinalSets({ set1: [], set2: [] });
+                }}
+                className="px-8"
+              >
+                뒤로 가기
+              </Button>
             </div>
           </CardContent>
         </Card>
