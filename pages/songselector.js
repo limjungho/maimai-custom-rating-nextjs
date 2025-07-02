@@ -107,7 +107,7 @@ export default function RhythmGameSongSelector() {
     return songDatabase.filter((song) =>
       song.musicname.toLowerCase().includes(searchTerm.toLowerCase())
     );
-  }, [searchTerm]);
+  }, [searchTerm, songDatabase]);
 
   // 곡 선택 함수
   const selectSong = (song) => {
