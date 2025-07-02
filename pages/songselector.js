@@ -28,7 +28,6 @@ export default function RhythmGameSongSelector() {
         if (!resp.error) {
           if (Object.keys(resp.data).length > 0) {
             setSongDatabase(resp.data);
-            console.log(resp.data);
           } else {
           }
         }
@@ -327,9 +326,11 @@ export default function RhythmGameSongSelector() {
                 return (
                   <div
                     key={index}
-                    className={`cursor-pointer transition-all border-8 border-[${
-                      borderColor[index]
-                    }] ${isExcluded ? "brightness-[0.3]" : undefined}`}
+                    className={`cursor-pointer transition-all border-8`}
+                    style={{
+                      borderColor: borderColor[index],
+                      filter: isExcluded ? "brightness(0.3)" : "",
+                    }}
                     onClick={
                       finalSets.set1.length === 0
                         ? () => handleBorderClick(index)
@@ -349,7 +350,7 @@ export default function RhythmGameSongSelector() {
                                 e.stopPropagation();
                                 toggleExcludeSong(index);
                               }
-                            : undefined
+                            : ""
                         }
                       />
                       {dxstdbutton[index] == "dx" && (
@@ -387,7 +388,7 @@ export default function RhythmGameSongSelector() {
                         />
                       )}
                       {isExcluded && (
-                        <div className="brightness-100 isolate absolute z-10 inset-0 flex items-center justify-center pointer-events-none">
+                        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                           <X className="text-white h-24 w-24" />
                         </div>
                       )}
@@ -451,7 +452,8 @@ export default function RhythmGameSongSelector() {
                         }`}
                       >
                         <div
-                          className={`relative w-32 h-32 border-8 border-[${item.borderColor}] relative overflow-hidden`}
+                          className={`relative w-32 h-32 border-8 relative overflow-hidden`}
+                          style={{ borderColor: item.borderColor }}
                         >
                           <Image
                             src={item.song.imglink || "/placeholder.svg"}
@@ -499,7 +501,8 @@ export default function RhythmGameSongSelector() {
                         }`}
                       >
                         <div
-                          className={`relative w-32 h-32 border-8 border-[${item.borderColor}] relative overflow-hidden`}
+                          className={`relative w-32 h-32 border-8 relative overflow-hidden`}
+                          style={{ borderColor: item.borderColor }}
                         >
                           <Image
                             src={item.song.imglink || "/placeholder.svg"}
