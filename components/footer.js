@@ -69,6 +69,16 @@ export function Footer() {
                   maimaiDX 공식 홈페이지
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="https://x.com/howlingsoul"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-gray-600 hover:text-blue-600 transition-colors"
+                >
+                  기타 서비스 관련된 문의 : 트위터(X) @howlingsoul
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
