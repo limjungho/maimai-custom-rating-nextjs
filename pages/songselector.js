@@ -200,9 +200,9 @@ export default function RhythmGameSongSelector() {
                       fill
                       className={`object-cover border-8 ${
                         song.difficulty === "MAS"
-                          ? "border-[#C27FF4]"
+                          ? "border-[#9F51DC]"
                           : song.difficulty === "ReMAS"
-                          ? "border-[#E5DDEA]"
+                          ? "border-[#DBAAFF]"
                           : "border-[#FF6666]"
                       }`}
                     />
@@ -261,9 +261,9 @@ export default function RhythmGameSongSelector() {
                           fill
                           className={`object-cover border-8 ${
                             song.difficulty === "MAS"
-                              ? "border-[#C27FF4]"
+                              ? "border-[#9F51DC]"
                               : song.difficulty === "ReMAS"
-                              ? "border-[#E5DDEA]"
+                              ? "border-[#DBAAFF]"
                               : "border-[#FF6666]"
                           }`}
                         />
@@ -359,9 +359,9 @@ export default function RhythmGameSongSelector() {
                       key={index}
                       className={`relative cursor-pointer transition-all border-8 ${
                         song.difficulty === "MAS"
-                          ? "border-[#C27FF4]"
+                          ? "border-[#9F51DC]"
                           : song.difficulty === "ReMAS"
-                          ? "border-[#E5DDEA]"
+                          ? "border-[#DBAAFF]"
                           : "border-[#FF6666]"
                       }`}
                       style={{
@@ -467,9 +467,9 @@ export default function RhythmGameSongSelector() {
                         <div
                           className={`relative w-32 h-32 border-8 ${
                             item.song.difficulty === "MAS"
-                              ? "border-[#C27FF4]"
+                              ? "border-[#9F51DC]"
                               : item.song.difficulty === "ReMAS"
-                              ? "border-[#E5DDEA]"
+                              ? "border-[#DBAAFF]"
                               : "border-[#FF6666]"
                           } relative overflow-hidden cursor-pointer`}
                           onClick={() => handleImageClick(item, index)}
@@ -525,9 +525,9 @@ export default function RhythmGameSongSelector() {
                         <div
                           className={`relative w-32 h-32 border-8 ${
                             item.song.difficulty === "MAS"
-                              ? "border-[#C27FF4]"
+                              ? "border-[#9F51DC]"
                               : item.song.difficulty === "ReMAS"
-                              ? "border-[#E5DDEA]"
+                              ? "border-[#DBAAFF]"
                               : "border-[#FF6666]"
                           } relative overflow-hidden cursor-pointer`}
                           onClick={() => handleImageClick(item, index + 2)}
@@ -680,11 +680,20 @@ export default function RhythmGameSongSelector() {
 
                       {/* Level Display */}
                       <div className="flex items-center gap-3">
+                        {/*
                         <span className="text-2xl font-bold text-gray-700">
                           Level:
                         </span>
+                        */}
                         <div className="bg-gray-900 text-white px-4 py-2 rounded-lg font-black text-2xl shadow-lg">
-                          {playingSong.level}
+                          Level{" "}
+                          {playingSong.level < 14
+                            ? "13+"
+                            : playingSong.level < 14.6
+                            ? "14"
+                            : playingSong.level < 15
+                            ? "14+"
+                            : "15"}
                         </div>
                       </div>
                     </div>
