@@ -103,10 +103,13 @@ export default function RhythmGameSongSelector() {
 
   // 검색 결과 필터링
   const filteredSongs = useMemo(() => {
-    if (!searchTerm.trim()) return songDatabase;
-    return songDatabase.filter((song) =>
-      song.musicname.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+    const term = searchTerm.trim().toLowerCase();
+    if (!term) return songDatabase;
+    return songDatabase.filter((song) => {
+      const musicNameMatch = song.musicname?.toLowerCase().includes(term);
+      const subNameMatch = song.subname?.includes(term);
+      return musicNameMatch || subNameMatch;
+    });
   }, [searchTerm, songDatabase]);
 
   // 곡 선택 함수

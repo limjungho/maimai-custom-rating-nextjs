@@ -10,7 +10,7 @@ export default async (req, res) => {
     const sqlneon = neon(`${process.env.DATABASE_URL}`);
 
     const sqlselect =
-      "SELECT musicname, imglink, dxstd, difficulty, level FROM musiclevel WHERE level > 13.5";
+      "SELECT musicname, imglink, dxstd, difficulty, level, subname FROM musiclevel WHERE level > 13.5";
     const row = await sqlneon(sqlselect);
     if (row) {
       res.status(200).json({ data: row });
