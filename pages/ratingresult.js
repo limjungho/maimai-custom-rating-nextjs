@@ -225,6 +225,7 @@ export default function Component() {
                             alt="DX Image"
                             width={128}
                             height={128}
+                            unoptimized={true}
                             className="object-cover"
                           />
                         ) : music.dxStd === "STD" ? (
@@ -233,6 +234,7 @@ export default function Component() {
                             alt="DX Image"
                             width={128}
                             height={128}
+                            unoptimized={true}
                             className="object-cover"
                           />
                         ) : null}
@@ -244,6 +246,7 @@ export default function Component() {
                             alt="DX Image"
                             width={128}
                             height={128}
+                            unoptimized={true}
                             className="object-cover"
                           />
                         ) : music.difficulty === "MAS" ? (
@@ -252,6 +255,7 @@ export default function Component() {
                             alt="DX Image"
                             width={128}
                             height={128}
+                            unoptimized={true}
                             className="object-cover"
                           />
                         ) : music.difficulty === "ReMAS" ? (
@@ -260,6 +264,7 @@ export default function Component() {
                             alt="DX Image"
                             width={128}
                             height={128}
+                            unoptimized={true}
                             className="object-cover"
                           />
                         ) : null}
@@ -277,6 +282,7 @@ export default function Component() {
                             alt="DX Image"
                             width={64}
                             height={64}
+                            unoptimized={true}
                             className="w-[80%] object-cover"
                           />
                         ) : music.fcap === "FC+" ? (
@@ -285,6 +291,7 @@ export default function Component() {
                             alt="DX Image"
                             width={64}
                             height={64}
+                            unoptimized={true}
                             className="w-[80%] object-cover"
                           />
                         ) : music.fcap === "AP" ? (
@@ -293,6 +300,7 @@ export default function Component() {
                             alt="DX Image"
                             width={64}
                             height={64}
+                            unoptimized={true}
                             className="w-[80%] object-cover"
                           />
                         ) : music.fcap === "AP+" ? (
@@ -301,6 +309,7 @@ export default function Component() {
                             alt="DX Image"
                             width={64}
                             height={64}
+                            unoptimized={true}
                             className="w-[80%] object-cover"
                           />
                         ) : null}

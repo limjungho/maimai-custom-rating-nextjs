@@ -200,6 +200,7 @@ export default function RhythmGameSongSelector() {
                     <Image
                       src={song.imglink || "/placeholder.svg"}
                       alt={song.musicname}
+                      unoptimized={true}
                       fill
                       className={`object-cover border-8 ${
                         song.difficulty === "MAS"
@@ -213,6 +214,7 @@ export default function RhythmGameSongSelector() {
                       <Image
                         src="https://maimaidx-eng.com/maimai-mobile/img/music_dx.png"
                         alt="DX Image"
+                        unoptimized={true}
                         width={64}
                         height={64}
                         className="absolute top-[80%] left-[44%] w-[50%]"
@@ -222,6 +224,7 @@ export default function RhythmGameSongSelector() {
                       <Image
                         src="https://maimaidx-eng.com/maimai-mobile/img/music_standard.png"
                         alt="DX Image"
+                        unoptimized={true}
                         width={64}
                         height={64}
                         className="absolute top-[80%] left-[44%] w-[50%]"
@@ -262,6 +265,7 @@ export default function RhythmGameSongSelector() {
                           src={song.imglink || "/placeholder.svg"}
                           alt={song.musicname}
                           fill
+                          unoptimized={true}
                           className={`object-cover border-8 ${
                             song.difficulty === "MAS"
                               ? "border-[#9F51DC]"
@@ -276,6 +280,7 @@ export default function RhythmGameSongSelector() {
                             alt="DX Image"
                             width={64}
                             height={64}
+                            unoptimized={true}
                             className="absolute top-[80%] left-[44%] w-[50%]"
                           />
                         )}
@@ -285,6 +290,7 @@ export default function RhythmGameSongSelector() {
                             alt="DX Image"
                             width={64}
                             height={64}
+                            unoptimized={true}
                             className="absolute top-[80%] left-[44%] w-[50%]"
                           />
                         )}
@@ -383,6 +389,7 @@ export default function RhythmGameSongSelector() {
                         alt={song.musicname}
                         width={190}
                         height={190}
+                        unoptimized={true}
                         className={`aspect-square overflow-hidden`}
                       />
                       {song.dxstd == "DX" && (
@@ -391,6 +398,7 @@ export default function RhythmGameSongSelector() {
                           alt="DX Image"
                           width={64}
                           height={64}
+                          unoptimized={true}
                           className="absolute top-[83%] left-[40%] w-[59%]"
                         />
                       )}
@@ -400,6 +408,7 @@ export default function RhythmGameSongSelector() {
                           alt="DX Image"
                           width={64}
                           height={64}
+                          unoptimized={true}
                           className="absolute top-[83%] left-[40%] w-[59%]"
                         />
                       )}
@@ -481,6 +490,7 @@ export default function RhythmGameSongSelector() {
                             src={item.song.imglink || "/placeholder.svg"}
                             alt={item.song.musicname}
                             fill
+                            unoptimized={true}
                             className="object-cover"
                           />
                           {item.song.dxstd == "DX" && (
@@ -489,6 +499,7 @@ export default function RhythmGameSongSelector() {
                               alt="DX Image"
                               width={64}
                               height={64}
+                              unoptimized={true}
                               className="absolute top-[83%] left-[40%] w-[59%]"
                             />
                           )}
@@ -498,6 +509,7 @@ export default function RhythmGameSongSelector() {
                               alt="DX Image"
                               width={64}
                               height={64}
+                              unoptimized={true}
                               className="absolute top-[83%] left-[40%] w-[59%]"
                             />
                           )}
@@ -539,6 +551,7 @@ export default function RhythmGameSongSelector() {
                             src={item.song.imglink || "/placeholder.svg"}
                             alt={item.song.musicname}
                             fill
+                            unoptimized={true}
                             className="object-cover"
                           />
                           {item.song.dxstd == "DX" && (
@@ -547,6 +560,7 @@ export default function RhythmGameSongSelector() {
                               alt="DX Image"
                               width={64}
                               height={64}
+                              unoptimized={true}
                               className="absolute top-[83%] left-[40%] w-[59%]"
                             />
                           )}
@@ -556,6 +570,7 @@ export default function RhythmGameSongSelector() {
                               alt="DX Image"
                               width={64}
                               height={64}
+                              unoptimized={true}
                               className="absolute top-[83%] left-[40%] w-[59%]"
                             />
                           )}
@@ -604,6 +619,7 @@ export default function RhythmGameSongSelector() {
                         alt={playingSong.musicname}
                         width={200}
                         height={200}
+                        unoptimized={true}
                         className="object-cover rounded-xl shadow-lg ring-2 ring-gray-200"
                       />
                     </div>
@@ -645,6 +661,7 @@ export default function RhythmGameSongSelector() {
                               alt="Master Difficulty"
                               width={64}
                               height={64}
+                              unoptimized={true}
                               className="w-24 drop-shadow-lg"
                             />
                           </div>
@@ -656,6 +673,7 @@ export default function RhythmGameSongSelector() {
                               alt="Re:Master Difficulty"
                               width={64}
                               height={64}
+                              unoptimized={true}
                               className="w-24 drop-shadow-lg"
                             />
                           </div>
@@ -667,6 +685,7 @@ export default function RhythmGameSongSelector() {
                             alt="DX Chart"
                             width={64}
                             height={64}
+                            unoptimized={true}
                             className="w-24 drop-shadow-lg"
                           />
                         )}
@@ -676,6 +695,7 @@ export default function RhythmGameSongSelector() {
                             alt="Standard Chart"
                             width={64}
                             height={64}
+                            unoptimized={true}
                             className="w-24 drop-shadow-lg"
                           />
                         )}
