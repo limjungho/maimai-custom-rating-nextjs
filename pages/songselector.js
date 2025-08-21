@@ -329,7 +329,7 @@ export default function RhythmGameSongSelector() {
       {/* 무작위로 섞인 곡들의 이미지 1x8 배열 표시 */}
       {finalSets.set1.length === 0 && shuffledSongs.length >= 1 && (
         <Card>
-          <CardContent className="select-none bg-[#0071BC] bg-cover bg-center bg-no-repeat opacity-90 p-6">
+          <CardContent className="select-none bg-[#FF3399] bg-cover bg-center bg-no-repeat opacity-90 p-6">
             <h2 className="text-xl font-semibold mb-4 text-center">
               게임 순서 (무작위)
             </h2>
@@ -454,7 +454,7 @@ export default function RhythmGameSongSelector() {
       {/* 최종 게임 세트 표시 */}
       {finalSets.set1.length > 0 && finalSets.set2.length > 0 && (
         <Card>
-          <CardContent className="select-none bg-[#0071BC] bg-cover bg-center bg-no-repeat p-6 opacity-90">
+          <CardContent className="select-none bg-[#FF3399] bg-cover bg-center bg-no-repeat p-6 opacity-90">
             <h2 className="select-none text-xl font-semibold mb-6 text-center">
               최종 게임 세트
             </h2>
